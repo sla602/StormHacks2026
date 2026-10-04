@@ -65,7 +65,8 @@ export default function App() {
     }
   }, [theme]);
 
-  // Shortcuts when you're not typing: T / O switch theme, N starts a new question
+    // Shortcuts when you're not typing: T / O switch theme, N starts a new question,
+  // 1-9 pick an example and 0 clears it on the first screen
   useEffect(() => {
     const onKey = (e) => {
       if (e.ctrlKey || e.metaKey || e.altKey || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
@@ -73,6 +74,11 @@ export default function App() {
       const t = THEMES.find((x) => x.key === k);
       if (t) switchTheme(t.id);
       if (k === "N" && view === "council" && !busy) setView("ask");
+      if (view === "ask" && !busy && /^[0-9]$/.test(k)) {
+        const preset = presetsFor(theme)[Number(k) - 1];
+        if (k === "0") setForm(EMPTY_CASE);
+        else if (preset) setForm({ ...preset });
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);

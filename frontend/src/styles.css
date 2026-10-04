@@ -329,3 +329,26 @@ details > summary:hover { text-decoration: underline; }
   background: #fff; color: var(--ink); font-weight: 700;
   border: var(--border-w) solid var(--border); border-radius: 999px; box-shadow: 3px 3px 0 var(--border);
 }
+
+/* ---------- examples list ---------- */
+.examples { margin-top: 14px; }
+.examples-title { color: var(--muted); font-size: 0.85rem; }
+.examples-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.examples-desc { margin: 8px 0 0; color: var(--muted); }
+
+/* Terminal: a bordered menu panel, one example per row, like a TUI */
+[data-theme="terminal"] .examples { position: relative; margin-top: 24px; padding: 16px 8px 8px; border: 1px solid var(--border); }
+[data-theme="terminal"] .examples-title {
+  position: absolute; top: -0.8em; left: 10px; padding: 0 6px; line-height: 1.6;
+  background: var(--surface); color: var(--on-bg); font-weight: 700; font-size: 0.9rem;
+}
+[data-theme="terminal"] .examples-list {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2px 16px; margin: 0;
+}
+[data-theme="terminal"] .examples-list button {
+  display: flex; gap: 8px; align-items: baseline; text-align: left; background: transparent;
+  padding: 3px 8px; border-left: 2px solid transparent;
+}
+[data-theme="terminal"] .examples-list button[aria-pressed="true"] { border-left-color: #f9e2af; }
+[data-theme="terminal"] .examples-desc { margin: 8px 0 0; padding: 6px 8px 0; border-top: 1px dashed var(--border); }
+[data-theme="terminal"] .examples-desc::before { content: "> "; color: #a6e3a1; }

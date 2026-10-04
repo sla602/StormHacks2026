@@ -60,21 +60,23 @@ export function AskWindow({ presets, form, setForm, onSubmit, busy, T }) {
             }}
           />
 
-          <div className="row">
-            <span className="muted small">{T.examples}</span>
-            <div className="tabs">
-              {presets.map((p) => (
+                    <div className="examples">
+            <span className="examples-title">{T.examples}</span>
+            <div className="examples-list">
+              {presets.map((p, i) => (
                 <button key={p.id} type="button" aria-pressed={form.id === p.id} disabled={busy}
                         onClick={() => setForm({ ...p })}>
-                  {p.title.replace(/\s*\(.*\)$/, "")}
+                  <kbd>{i + 1}</kbd> {p.title.replace(/\s*\(.*\)$/, "")}
                 </button>
               ))}
               {form.id !== "custom" && (
-                <button type="button" disabled={busy} onClick={() => setForm(EMPTY_CASE)}>{T.clear}</button>
+                <button type="button" disabled={busy} onClick={() => setForm(EMPTY_CASE)}>
+                  <kbd>0</kbd> {T.clear}
+                </button>
               )}
             </div>
+            {selected && <p className="examples-desc small">{selected.description}</p>}
           </div>
-          {selected && <p className="muted small">{selected.description}</p>}
 
           <details>
             <summary>{T.details}</summary>
