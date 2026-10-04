@@ -62,4 +62,4 @@ def build_plan(task: Task, ctx: dict, votes: list[Vote], verdict: Verdict) -> Pl
             raise ValueError("empty plan")
         return Plan(headline=out.headline.strip(), steps=steps, source="llm")
     except Exception as e:
-        return fallback_plan(task, ctx, verdict, f"{type(e).__name__}: {str(e)[:120]}")
+        return fallback_plan(task, ctx, verdict, llm.short_error(e))

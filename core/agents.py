@@ -123,7 +123,7 @@ def cast_vote(key: str, task: Task, ctx: dict) -> Vote:
             return Vote(agent=key, vote=out.vote, summary=out.summary, reason=out.reason,
                         win_win=out.win_win, suggested_action=out.suggested_action, source="llm")
         except Exception as e:  # fall through to the rule-based vote
-            error = f"{type(e).__name__}: {str(e)[:120]}"
+            error = llm.short_error(e)
 
     v = fallback_vote(key, task, ctx)
     v.error = error

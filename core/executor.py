@@ -53,6 +53,6 @@ def execute(task: Task, verdict: Verdict, peak: bool) -> Result:
         try:
             text, tokens = llm.generate_text(model, prompt)
         except Exception as e:  # the service never goes down: degrade gracefully to the cache
-            return _cache_result(task, peak, note=f"API error, served from cache: {str(e)[:80]}")
+            return _cache_result(task, peak, note=f"Served from cache. {llm.short_error(e)}")
 
     return Result(text, model, action, calculator.estimate_co2(task, action, peak), tokens=tokens)
