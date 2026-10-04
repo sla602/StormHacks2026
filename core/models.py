@@ -74,4 +74,5 @@ class PlanOut(BaseModel):
 class Plan(BaseModel):
     headline: str
     steps: list[str] = Field(default_factory=list)
-    source: str
+    source: str = "llm"  # llm | fallback
+    error: str = ""      # why the template plan was used (if it was)

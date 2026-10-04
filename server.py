@@ -29,7 +29,7 @@ PRESETS_OTTER = json.loads((ROOT / "data" / "presets_otter.json").read_text(enco
 DIST = ROOT / "frontend" / "dist"
 MAX_PENDING = 20
 
-app = FastAPI(title="Eco-GovernAI")
+app = FastAPI(title=config.APP_NAME)
 
 # One shared in-memory ledger: fine for a single-presenter demo, shared by everyone if deployed.
 ledger = Ledger(quota=config.DEFAULT_QUOTA_G)
@@ -51,6 +51,7 @@ class ExecuteIn(BaseModel):
     run_id: str
     narrate: bool = True
     theme: Literal["terminal", "otter"] = "terminal"  # picks the voices and wording
+
 
 def ledger_state() -> dict:
     return {

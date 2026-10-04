@@ -4,7 +4,7 @@ from . import config, llm
 from .models import Action, Task, Vote, VoteOut, VoteType
 
 COMMON_RULES = """
-You are a member of the "Eco-GovernAI Council". The council looks for ways people, AI and the environment
+You are a member of the "TriBunal Council". The council looks for ways people, AI and the environment
 can coexist. Your job is not only to judge but to find a win-win: the company or person keeps the value
 they need while emitting less CO2. You vote on ONE AI compute request.
 - vote: APPROVE (run the request as asked on the high-performance model) / REJECT / ABSTAIN

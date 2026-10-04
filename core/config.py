@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+APP_NAME = os.getenv("APP_NAME", "Eco-GovernAI Council").strip()  # how the agents refer to their council
+
 # --- Gemini ---
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 MODEL_FULL = os.getenv("GEMINI_MODEL_FULL", "gemini-3.5-flash")
@@ -41,4 +43,3 @@ VOICE_SETS = {
         "ethics": _voice("ELEVENLABS_OTTER_ETHICS", "IKne3meq5aSn9XLyUdCD"),      # Charlie: easygoing
     },
 }
-VOICES = VOICE_SETS["terminal"]  # kept for scripts that import config.VOICES
