@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-APP_NAME = os.getenv("APP_NAME", "Eco-GovernAI Council").strip()  # how the agents refer to their council
+APP_NAME = os.getenv("APP_NAME", "TriBunal Council").strip()  # how the agents refer to their council
 
 # --- Gemini ---
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")

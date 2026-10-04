@@ -16,7 +16,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from core import config, tts
-from core.agents import AGENTS, ORDER
+from core.agents import ORDER
 from core.council import build_context, convene, decide
 from core.executor import execute
 from core.ledger import Ledger
@@ -69,7 +69,6 @@ def verdict_json(verdict) -> dict:
         "approve": verdict.approve,
         "reject": verdict.reject,
         "abstain": verdict.abstain,
-        "tally": verdict.tally_str,
         "notes": verdict.notes,
     }
 
@@ -94,7 +93,6 @@ def get_config():
         "presets": PRESETS,
         "presets_otter": PRESETS_OTTER,
         "order": ORDER,
-        "agents": {k: {"name": AGENTS[k]["name"]} for k in ORDER},
         "has_tts": config.HAS_TTS,
         "has_gemini_key": config.HAS_API_KEY,
         "offline": config.FORCE_FALLBACK,
@@ -160,7 +158,6 @@ def run_execute(body: ExecuteIn):
         "result": {
             "text": result.text,
             "model": result.model,
-            "action": result.effective_action.value,
             "charged_co2": result.charged_co2,
             "tokens": result.tokens,
             "note": result.note,
@@ -183,7 +180,7 @@ def report():
     with lock:
         body = ledger.report_json()
     return Response(body, media_type="application/json",
-                    headers={"Content-Disposition": 'attachment; filename="eco_governai_audit.json"'})
+                    headers={"Content-Disposition": 'attachment; filename="tribunal_audit.json"'})
 
 
 # Serve the built React app (after `npm run build`). Must come after the /api routes.

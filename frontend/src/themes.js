@@ -20,7 +20,7 @@ export const EMOJI = { ask: "💬", business: "🏢", eco: "🌿", ethics: "⚖�
 
 export const TEXT = {
   terminal: {
-    brand: "Eco-GovernAI Council",
+    brand: "TriBunal Council",
     tagline: "Planning to use AI for a business task? The council finds a way to do it that cuts carbon without giving up the business value.",
     how: [
       "Describe what your company wants AI to do.",
@@ -87,7 +87,7 @@ export const TEXT = {
     },
   },
   otter: {
-    brand: "Eco-GovernAI Council",
+    brand: "TriBunal Council",
     tagline: "Want AI to help with something? Ask the otters! They find a way that's fun for you and kind to the planet.",
     how: [
       "Tell the otters what you want AI to do.",

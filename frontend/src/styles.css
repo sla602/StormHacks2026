@@ -76,7 +76,6 @@ a { color: inherit; }
 .pre { white-space: pre-wrap; max-width: 72ch; }
 .error { color: var(--reject); font-weight: 700; }
 [data-theme="otter"] .error { background: #fff; padding: 6px 10px; border-radius: 8px; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 :focus-visible { outline: 2px solid var(--warn); outline-offset: 2px; }
 .row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 12px; }
 .row.spread { justify-content: space-between; }
@@ -322,3 +321,11 @@ details > summary:hover { text-decoration: underline; }
 [data-theme="otter"] button.primary:not(:disabled):hover { box-shadow: 8px 8px 0 var(--border); }
 [data-theme="otter"] button:not(:disabled):active { transform: translate(2px, 2px); box-shadow: none; }
 [data-theme="otter"] button.link:hover { transform: none; box-shadow: none; }
+
+/* ---------- text that sits directly on the blue otter background ---------- */
+[data-theme="otter"] .view > .muted { color: #fff; }
+[data-theme="otter"] .view > .facts {
+  width: fit-content; margin: 8px auto 0; padding: 6px 14px;
+  background: #fff; color: var(--ink); font-weight: 700;
+  border: var(--border-w) solid var(--border); border-radius: 999px; box-shadow: 3px 3px 0 var(--border);
+}

@@ -8,7 +8,7 @@ ElevenLabs voice, in two themes: Terminal and Otter. Carbon figures are estimate
 
 ## Setup
 ```bash
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv/Scripts/activate
 pip install -r requirements.txt
 cp .env.example .env              # then add your own keys (never commit .env)
 python cli_demo.py                # check the pipeline without the UI (FORCE_FALLBACK=1 for no API calls)
