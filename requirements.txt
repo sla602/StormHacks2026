@@ -1,0 +1,7 @@
+# Backend for the React UI
+fastapi>=0.115
+uvicorn[standard]>=0.30
+google-genai>=1.51.0
+pydantic>=2.7
+python-dotenv>=1.0
+requests>=2.31

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "invite",
+    "title": "Birthday invite",
+    "prompt": "Write a fun invitation for my friend's birthday picnic at the park this Saturday.",
+    "urgency": "Routine",
+    "payload_tokens": 600,
+    "description": "Tiny job, lots of energy left. Expect: Go big!"
+  },
+  {
+    "id": "album",
+    "title": "Trip photo captions",
+    "prompt": "Write a cute caption for each of the 300 photos from our family beach trip.",
+    "urgency": "Routine",
+    "payload_tokens": 40000,
+    "description": "Big job. Expect: Go light!"
+  },
+  {
+    "id": "puppy",
+    "title": "Lost puppy posters",
+    "prompt": "Our neighbor's puppy is lost! Make lost-puppy posters in 10 languages for the whole neighborhood, right now.",
+    "urgency": "Emergency",
+    "payload_tokens": 20000,
+    "description": "Super urgent, so the otters make an exception. Lower today's energy in Settings to see it."
+  },
+  {
+    "id": "cartoons",
+    "title": "Every cartoon ever",
+    "prompt": "Watch every cartoon ever made and tell me which one is the best.",
+    "urgency": "Routine",
+    "payload_tokens": 200000,
+    "description": "Way too big for one day. Expect: Stop!"
+  }
+]

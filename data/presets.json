@@ -1,0 +1,34 @@
+[
+  {
+    "id": "marketing",
+    "title": "Marketing copy (small, routine)",
+    "prompt": "Write 3 Instagram captions for our cafe's new black sesame latte.",
+    "urgency": "Routine",
+    "payload_tokens": 800,
+    "description": "Small request, plenty of quota -> expect FULL"
+  },
+  {
+    "id": "report50",
+    "title": "Summarize a 50-page quarterly report (large, routine)",
+    "prompt": "Summarize the key points of a 50-page quarterly earnings report in 5 lines. (The report body is omitted in this demo; write a typical quarterly-report summary.)",
+    "urgency": "Routine",
+    "payload_tokens": 40000,
+    "description": "Full model exceeds quota, lightweight fits -> expect DOWNGRADE"
+  },
+  {
+    "id": "security",
+    "title": "Urgent security patch notice (emergency)",
+    "prompt": "Summarize this critical CVE security patch announcement in 3 sentences for all employees.",
+    "urgency": "Emergency",
+    "payload_tokens": 20000,
+    "description": "Emergency exception even above quota -> expect FULL (lower the quota slider to see the override)"
+  },
+  {
+    "id": "dataset",
+    "title": "Analyze 3 years of company logs (excessive, routine)",
+    "prompt": "Analyze our entire 3-year company-wide log dataset and report every anomalous pattern.",
+    "urgency": "Routine",
+    "payload_tokens": 200000,
+    "description": "Even the lightweight model exceeds the daily quota -> expect BLOCK (circuit breaker)"
+  }
+]
